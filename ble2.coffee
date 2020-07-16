@@ -1,6 +1,7 @@
 module.exports = (env) ->
   Promise = env.require 'bluebird'
 
+  noble = require "@abandonware/noble"
   events = require 'events'
 
   class BLEPlugin extends env.plugins.Plugin
