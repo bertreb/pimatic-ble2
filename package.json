@@ -6,9 +6,10 @@
   "files": [
     "ble2.coffee",
     "README.md",
-    "ble2-config-schema.coffee"
+    "ble2-config-schema.coffee",
+    "device-config-schema.coffee"
   ],
-  "version": "0.9.5",
+  "version": "0.9.6",
   "homepage": "https://github.com/bertreb/pimatic-ble2",
   "configSchema": "ble2-config-schema.coffee",
   "dependencies": {
