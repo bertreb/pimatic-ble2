@@ -1,7 +1,6 @@
 module.exports = (env) ->
   Promise = env.require 'bluebird'
 
-  noble = require "@abandonware/noble"
   events = require 'events'
 
   class BLEPlugin extends env.plugins.Plugin
@@ -14,7 +13,7 @@ module.exports = (env) ->
       @discoveredPeripherals = []
       @discoverMode = false
 
-      @noble = require 'noble'
+      @noble = require "@abandonware/noble"
 
       # Reset Bluetooth device
       exec = require('child_process').exec
