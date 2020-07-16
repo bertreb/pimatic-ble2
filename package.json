@@ -8,7 +8,7 @@
     "README.md",
     "ble2-config-schema.coffee"
   ],
-  "version": "0.9.3",
+  "version": "0.9.4",
   "homepage": "https://github.com/bertreb/pimatic-ble2",
   "configSchema": "ble2-config-schema.coffee",
   "dependencies": {
