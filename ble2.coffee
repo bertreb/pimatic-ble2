@@ -7,7 +7,7 @@ module.exports = (env) ->
     init: (app, @framework, @config) =>
       @debug =  @config.debug
       @deviceDebug = @config.deviceDebug
-      @scanInterval = @config.scanInterval
+      @scanInterval = @config.scanInterval ? 300000
       @devices = []
       @peripheralNames = {}
       @discoveredPeripherals = []
@@ -203,7 +203,8 @@ module.exports = (env) ->
       if @peripheral
         if @peripheral.state == 'disconnected'
           env.logger.debug 'Trying to connect to %s', @name
-          @plugin.ble.stopScanning()
+          #@plugin.ble.stopScanning()
+          @plugin.stopScanning()
           @peripheral.connect (error) =>
             if !error
               env.logger.debug 'Device %s connected', @name
@@ -212,7 +213,8 @@ module.exports = (env) ->
               env.logger.debug 'Device %s connection failed: %s', @name, error
               env.logger.debug 'Device state: %s', @peripheral.state
               @peripheral.disconnect()
-            @plugin.ble.startScanning()
+            @plugin.startScanning()
+            #@plugin.ble.startScanning()
         else if @peripheral.state == 'connected'
           env.logger.debug 'Device %s still connected', @name
           clearTimeout @_resetPresenceTimeout
