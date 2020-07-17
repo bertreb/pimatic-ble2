@@ -5,8 +5,8 @@ module.exports = (env) ->
 
   class BLEPlugin extends env.plugins.Plugin
     init: (app, @framework, @config) =>
-      @debug =  @config.debug
-      @deviceDebug = @config.deviceDebug
+      @debug =  @config.debug ? false
+      @deviceDebug = @config.deviceDebug ? false
       @scanInterval = @config.scanInterval ? 300000
       @devices = []
       @peripheralNames = {}
